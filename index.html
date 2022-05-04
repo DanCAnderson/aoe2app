@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="vue.js"></script>
+  <title>AoE2 Techs</title>
+</head>
+
+<body>
+  <div id="app">
+    <div id="civList">
+      <button @click="clearAll" id="reset">Clear All</button>
+      <ul>
+        <li v-for="civ in availableCivs">{{civ}}</li>
+      </ul>
+      <ul>
+        <li v-for="civ in disabledCivs">{{civ}}</li>
+      </ul>
+    </div>
+    <div class="tech-wrapper">
+      <tech-container tech-group="BARRACKS"></tech-container>
+      <tech-container tech-group="STABLE"></tech-container>
+      <tech-container tech-group="ARCHERY_RANGE"></tech-container>
+      <tech-container tech-group="SIEGE_WORKSHOP"></tech-container>
+      <tech-container tech-group="BLACKSMITH"></tech-container>
+      <tech-container tech-group="MONASTERY"></tech-container>
+      <tech-container tech-group="UNIVERSITY"></tech-container>
+      <tech-container tech-group="DOCK"></tech-container>
+      <tech-container tech-group="ECONOMY"></tech-container>
+      <tech-container tech-group="CASTLE"></tech-container>
+    </div>
+  </div>
+  
+  <script src="disabledtechs.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
