@@ -223,7 +223,7 @@ const civItem = Vue.component('civ-list-item', {
   },
 
   template: 
-    `<li>
+    `<li class="civ-list-item">
       <img class="civ-emblem" :src=imgPath>
       <span>{{civ}}</span>
     </li>`

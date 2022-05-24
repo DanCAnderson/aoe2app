@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 #app {
   height: 100vh;
   display: flex;
@@ -11,11 +15,28 @@
 
 #civList {
   width: 25%;
+  height: 100%;
+  padding: 5px 0 0 5px;
+  overflow: scroll;
+}
+
+.disabled-list > li {
+  opacity: 0.5;
+}
+
+#civList > ul {
+  padding: 0;
+}
+
+.civ-list-item {
+  display: flex;
+  
 }
 
 .civ-emblem {
-  width: 35px;
-  height: 35px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .tech-wrapper {
