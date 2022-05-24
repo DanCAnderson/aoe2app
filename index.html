@@ -13,7 +13,7 @@
     <div id="civList">
       <button @click="clearAll" id="reset">Clear All</button>
       <ul>
-        <li v-for="civ in availableCivs">{{civ}}</li>
+        <civ-list-item v-for="civ in availableCivs" v-bind:civ="civ"></civ-list-item>
       </ul>
       <ul>
         <li v-for="civ in disabledCivs">{{civ}}</li>

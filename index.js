@@ -213,6 +213,22 @@ const selectedTechs = [];
 const civs = Object.keys(disabledTechs);
 const availableCivs = [...civs];
 
+const civItem = Vue.component('civ-list-item', {
+  props: ['civ'],
+
+  computed: {
+    imgPath: function() {
+      return `./img/CIVS/${this.civ.toLowerCase()}.png`;
+    }
+  },
+
+  template: 
+    `<li>
+      <img class="civ-emblem" :src=imgPath>
+      <span>{{civ}}</span>
+    </li>`
+})
+
 const techButton = Vue.component('tech-button', {
   props: ['tech', 'techGroup'],
   
