@@ -304,7 +304,7 @@ const techContainer = Vue.component('tech-container', {
   data: function () {
     return { techs }
   },
-  template: '<div class="tech-container" v-bind:id=techGroup><tech-button v-for="tech in Object.keys(techs[techGroup])" v-bind:tech="Number(tech)" v-bind:tech-group="techGroup"></tech-button></div>'
+  template: '<div class="tech-container" v-bind:id=techGroup><tech-button v-for="tech in Object.keys(techs[techGroup])" :key=tech v-bind:tech="Number(tech)" v-bind:tech-group="techGroup"></tech-button></div>'
 });
 
 const app = new Vue({
