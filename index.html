@@ -19,7 +19,12 @@
         <civ-list-item v-for="civ in disabledCivs" v-bind:civ="civ" :key="civ"></civ-list-item>
       </ul>
     </div>
-    <div class="tech-wrapper">
+    <div class="tech-wrapper side-scroll">
+      <div class="age-container">
+        <img src="./img/FeudalAgeIconDE.png" class="age-icon row-1">
+        <img src="./img/CastleAgeIconDE.png" class="age-icon row-2">
+        <img src="./img/ImperialAgeIconDE.png" class="age-icon row-3">
+      </div>
       <tech-container tech-group="BARRACKS"></tech-container>
       <tech-container tech-group="STABLE"></tech-container>
       <tech-container tech-group="ARCHERY_RANGE"></tech-container>

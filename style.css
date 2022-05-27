@@ -39,6 +39,8 @@ body {
   margin-right: 5px;
 }
 
+/*  tech containers / buildings */
+
 .tech-wrapper {
   width: auto;
   overflow: scroll;
@@ -49,7 +51,26 @@ body {
   justify-content: stretch;
 }
 
-/*  tech containers / buildings */
+.tech-wrapper.side-scroll {
+  flex-wrap: nowrap;
+}
+
+.age-container {
+  display: none;
+}
+
+.age-container.side-scroll {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.age-icon {
+  height: 60px;
+}
+
+.side-scroll > .tech-container {
+  height: 100%;
+}
 
 .tech-container {
   height: min-content;
