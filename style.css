@@ -43,22 +43,14 @@ body {
 /*  tech containers / buildings */
 
 .tech-wrapper {
-  flex-grow: 2;
   overflow: scroll;
   padding: 10px 0 0 0;
   
-/*   display: flex;
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: stretch; */
-  
-  display: grid;
-  grid-template-columns: repeat(19, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-}
-
-.tech-wrapper.side-scroll {
   flex-wrap: nowrap;
+  justify-content: stretch;
+ 
 }
 
 .age-container {
@@ -74,83 +66,46 @@ body {
   height: 60px;
 }
 
-.side-scroll > .tech-container {
-  height: 100%;
-}
-
-.tech-container {
+.building-container {
   height: 100%;
   border: 1px solid black;
+}
+
+.building-header {
+  height: 25%;
+  
+  display: flex;
+}
+
+.building-header-icon {
+  display: block;
+  height: 75px;
+  margin: auto;
+  
+}
+
+.tech-button-container {
+  flex-grow: 2;
+  
   display: grid;
-}
-
-#BARRACKS, #STABLE, #ARCHERY_RANGE, #DOCK {
-  grid-row: 1/5;
-}
-
-#CASTLE {
-  grid-row: 5/9;
-}
-
-#BLACKSMITH, #SIEGE_WORKSHOP {
-  grid-row: 5/7;
-}
-
-#MONASTERY, #UNIVERSITY, #ECONOMY {
-  grid-row: 7/9;
-}
-
-#BARRACKS, #CASTLE {
-  grid-column: 1/5;
-}
-
-#DOCK {
-  grid-column: 16/20;
-}
-
-#UNIVERSITY {
-  grid-column: 10/13;
-}
-
-#ECONOMY {
-  grid-column: 13/16;
-}
-
-#ARCHERY_RANGE {
-  grid-column: 11/16;
   
+  grid-template-rows: repeat(5, 1fr);
+}
+
+#ARCHERY_RANGE, #BLACKSMITH, #MONASTERY {  
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
 }
 
-#STABLE {
-  grid-column: 5/11;
-  
+#STABLE {  
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
 }
 
-#DOCK, #BARRACKS, #CASTLE {
+#DOCK, #BARRACKS, #CASTLE, #SIEGE_WORKSHOP{
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
-
-#SIEGE_WORKSHOP {
-  grid-column: 10/14;
-  
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-
-#BLACKSMITH, #MONASTERY {
-  grid-column: 5/10;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr;
 }
 
 #UNIVERSITY,#ECONOMY {
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
 }
 
 .row-1 {

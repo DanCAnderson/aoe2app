@@ -132,24 +132,24 @@ function populateTechTree(tree) {
 
   Vue.set(tree, 'SIEGE_WORKSHOP', {});
 
-  Vue.set(tree.SIEGE_WORKSHOP, ONAGER, { name: 'Onager', column: 2, row: 1, upgrade: SIEGE_ONAGER });
-  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_ONAGER, { name: 'Siege Onager', column: 2, row: 2, req: ONAGER });
-  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_RAM, { name: 'Siege Ram', column: 1, row: 2 });
-  Vue.set(tree.SIEGE_WORKSHOP, HEAVY_SCORPION, { name: 'Heavy Scorpion', column: 3, row: 1 });
-  Vue.set(tree.SIEGE_WORKSHOP, BOMBARD_CANNON, { name: 'Bombard Cannon', column: 4, row: 1 });
+  Vue.set(tree.SIEGE_WORKSHOP, ONAGER, { name: 'Onager', column: 2, row: 2, upgrade: SIEGE_ONAGER });
+  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_ONAGER, { name: 'Siege Onager', column: 2, row: 3, req: ONAGER });
+  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_RAM, { name: 'Siege Ram', column: 1, row: 3 });
+  Vue.set(tree.SIEGE_WORKSHOP, HEAVY_SCORPION, { name: 'Heavy Scorpion', column: 3, row: 2 });
+  Vue.set(tree.SIEGE_WORKSHOP, BOMBARD_CANNON, { name: 'Bombard Cannon', column: 4, row: 2 });
 
   Vue.set(tree, 'BLACKSMITH', {});
 
-  Vue.set(tree.BLACKSMITH, IRON_CASTING, { name: 'Iron Casting', column: 3, row: 1, upgrade: BLAST_FURNACE });
-  Vue.set(tree.BLACKSMITH, CHAIN_BARDING_ARMOR, { name: 'Chain Barding Armor', column: 4, row: 1, upgrade: PLATE_BARDING_ARMOR });
-  Vue.set(tree.BLACKSMITH, CHAIN_MAIL_ARMOR, { name: 'Chain Mail Armor', column: 5, row: 1, upgrade: PLATE_MAIL_ARMOR });
-  Vue.set(tree.BLACKSMITH, LEATHER_ARCHER_ARMOR, { name: 'Leather Archer Armor', column: 1, row: 1, upgrade: RING_ARCHER_ARMOR });
-  Vue.set(tree.BLACKSMITH, RING_ARCHER_ARMOR, { name: 'Ring Archer Armor', column: 1, row: 2, req: LEATHER_ARCHER_ARMOR });
-  Vue.set(tree.BLACKSMITH, PLATE_BARDING_ARMOR, { name: 'Plate Barding Armor', column: 4, row: 2, req: CHAIN_BARDING_ARMOR });
-  Vue.set(tree.BLACKSMITH, PLATE_MAIL_ARMOR, { name: 'Plate Mail Armor', column: 5, row: 2, req: CHAIN_MAIL_ARMOR });
-  Vue.set(tree.BLACKSMITH, BLAST_FURNACE, { name: 'Blast Furnace', column: 3, row: 2, req: IRON_CASTING });
-  Vue.set(tree.BLACKSMITH, BODKIN_ARROW, { name: 'Bodkin Arrow', column: 2, row: 1, upgrade: BRACER });
-  Vue.set(tree.BLACKSMITH, BRACER, { name: 'Bracer', column: 2, row: 2, req: BODKIN_ARROW });
+  Vue.set(tree.BLACKSMITH, IRON_CASTING, { name: 'Iron Casting', column: 3, row: 2, upgrade: BLAST_FURNACE });
+  Vue.set(tree.BLACKSMITH, CHAIN_BARDING_ARMOR, { name: 'Chain Barding Armor', column: 4, row: 2, upgrade: PLATE_BARDING_ARMOR });
+  Vue.set(tree.BLACKSMITH, CHAIN_MAIL_ARMOR, { name: 'Chain Mail Armor', column: 5, row: 2, upgrade: PLATE_MAIL_ARMOR });
+  Vue.set(tree.BLACKSMITH, LEATHER_ARCHER_ARMOR, { name: 'Leather Archer Armor', column: 1, row: 2, upgrade: RING_ARCHER_ARMOR });
+  Vue.set(tree.BLACKSMITH, RING_ARCHER_ARMOR, { name: 'Ring Archer Armor', column: 1, row: 3, req: LEATHER_ARCHER_ARMOR });
+  Vue.set(tree.BLACKSMITH, PLATE_BARDING_ARMOR, { name: 'Plate Barding Armor', column: 4, row: 3, req: CHAIN_BARDING_ARMOR });
+  Vue.set(tree.BLACKSMITH, PLATE_MAIL_ARMOR, { name: 'Plate Mail Armor', column: 5, row: 3, req: CHAIN_MAIL_ARMOR });
+  Vue.set(tree.BLACKSMITH, BLAST_FURNACE, { name: 'Blast Furnace', column: 3, row: 3, req: IRON_CASTING });
+  Vue.set(tree.BLACKSMITH, BODKIN_ARROW, { name: 'Bodkin Arrow', column: 2, row: 2, upgrade: BRACER });
+  Vue.set(tree.BLACKSMITH, BRACER, { name: 'Bracer', column: 2, row: 3, req: BODKIN_ARROW });
 
   Vue.set(tree, 'DOCK', {});
 
@@ -178,22 +178,22 @@ function populateTechTree(tree) {
 
   Vue.set(tree, 'MONASTERY', {});
 
-  Vue.set(tree.MONASTERY, REDEMPTION, { name: 'Redemption', column: 1, row: 1 });
-  Vue.set(tree.MONASTERY, ATONEMENT, { name: 'Atonement', column: 2, row: 1 });
-  Vue.set(tree.MONASTERY, HERESY, { name: 'Heresy', column: 3, row: 1 });
-  Vue.set(tree.MONASTERY, BLOCK_PRINTING, { name: 'Block Printing', column: 3, row: 2 });
-  Vue.set(tree.MONASTERY, ILLUMINATION, { name: 'Illumination', column: 2, row: 2 });
-  Vue.set(tree.MONASTERY, THEOCRACY, { name: 'Theocracy', column: 4, row: 2 });
-  Vue.set(tree.MONASTERY, FAITH, { name: 'Faith', column: 1, row: 2 });
-  Vue.set(tree.MONASTERY, FERVOR, { name: 'Fervor', column: 5, row: 1 });
-  Vue.set(tree.MONASTERY, SANCTITY, { name: 'Sanctity', column: 4, row: 1 });
+  Vue.set(tree.MONASTERY, REDEMPTION, { name: 'Redemption', column: 1, row: 2 });
+  Vue.set(tree.MONASTERY, ATONEMENT, { name: 'Atonement', column: 2, row: 2 });
+  Vue.set(tree.MONASTERY, HERESY, { name: 'Heresy', column: 3, row: 2 });
+  Vue.set(tree.MONASTERY, BLOCK_PRINTING, { name: 'Block Printing', column: 3, row: 3 });
+  Vue.set(tree.MONASTERY, ILLUMINATION, { name: 'Illumination', column: 2, row: 3 });
+  Vue.set(tree.MONASTERY, THEOCRACY, { name: 'Theocracy', column: 4, row: 3 });
+  Vue.set(tree.MONASTERY, FAITH, { name: 'Faith', column: 1, row: 3 });
+  Vue.set(tree.MONASTERY, FERVOR, { name: 'Fervor', column: 5, row: 2 });
+  Vue.set(tree.MONASTERY, SANCTITY, { name: 'Sanctity', column: 4, row: 2 });
 
   Vue.set(tree, 'UNIVERSITY', {});
 
-  Vue.set(tree.UNIVERSITY, ARCHITECTURE, { name: 'Architecture', column: 3, row: 2 });
-  Vue.set(tree.UNIVERSITY, BOMBARD_TOWER, { name: 'Bombard Tower', column: 1, row: 2 });
-  Vue.set(tree.UNIVERSITY, SIEGE_ENGINEERS, { name: 'Siege Engineers', column: 2, row: 2 });
-  Vue.set(tree.UNIVERSITY, TREADMILL_CRANE, { name: 'Treadmill Crane', column: 1, row: 1 });
+  Vue.set(tree.UNIVERSITY, ARCHITECTURE, { name: 'Architecture', column: 3, row: 3 });
+  Vue.set(tree.UNIVERSITY, BOMBARD_TOWER, { name: 'Bombard Tower', column: 1, row: 3 });
+  Vue.set(tree.UNIVERSITY, SIEGE_ENGINEERS, { name: 'Siege Engineers', column: 2, row: 3 });
+  Vue.set(tree.UNIVERSITY, TREADMILL_CRANE, { name: 'Treadmill Crane', column: 1, row: 2 });
 
   Vue.set(tree, 'ECONOMY', {});
 
@@ -320,7 +320,24 @@ const techContainer = Vue.component('tech-container', {
   data: function () {
     return { techs }
   },
-  template: '<div class="tech-container" v-bind:id=techGroup><tech-button v-for="tech in Object.keys(techs[techGroup])" :key=tech v-bind:tech="Number(tech)" v-bind:tech-group="techGroup"></tech-button></div>'
+  computed: {
+    imgPath: function() {
+      return `./img/${this.techGroup.toUpperCase()}/${this.techGroup.toUpperCase()}.png`;
+    }
+  },
+  template: 
+    `<div class="building-container">
+      <div class="building-header">
+        <img class="building-header-icon" :src="imgPath">
+      </div>
+      <div class="tech-button-container" :id=techGroup>
+        <tech-button 
+          v-for="tech in Object.keys(techs[techGroup])" 
+          :key=tech v-bind:tech="Number(tech)" 
+          :tech-group="techGroup">
+        </tech-button>
+      </div>
+    </div>`
 });
 
 const app = new Vue({
