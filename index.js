@@ -132,11 +132,11 @@ function populateTechTree(tree) {
 
   Vue.set(tree, 'SIEGE_WORKSHOP', {});
 
-  Vue.set(tree.SIEGE_WORKSHOP, ONAGER, { name: 'Onager', column: 2, row: 2, upgrade: SIEGE_ONAGER });
-  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_ONAGER, { name: 'Siege Onager', column: 2, row: 3, req: ONAGER });
-  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_RAM, { name: 'Siege Ram', column: 1, row: 3 });
-  Vue.set(tree.SIEGE_WORKSHOP, HEAVY_SCORPION, { name: 'Heavy Scorpion', column: 3, row: 3 });
-  Vue.set(tree.SIEGE_WORKSHOP, BOMBARD_CANNON, { name: 'Bombard Cannon', column: 4, row: 3 });
+  Vue.set(tree.SIEGE_WORKSHOP, ONAGER, { name: 'Onager', column: 2, row: 1, upgrade: SIEGE_ONAGER });
+  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_ONAGER, { name: 'Siege Onager', column: 2, row: 2, req: ONAGER });
+  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_RAM, { name: 'Siege Ram', column: 1, row: 2 });
+  Vue.set(tree.SIEGE_WORKSHOP, HEAVY_SCORPION, { name: 'Heavy Scorpion', column: 3, row: 1 });
+  Vue.set(tree.SIEGE_WORKSHOP, BOMBARD_CANNON, { name: 'Bombard Cannon', column: 4, row: 1 });
 
   Vue.set(tree, 'BLACKSMITH', {});
 

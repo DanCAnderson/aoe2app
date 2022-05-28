@@ -14,7 +14,8 @@ body {
 }
 
 #civList {
-  width: 25%;
+  flex-basis: 1;
+  min-width: max-content;
   height: 100%;
   padding: 5px 0 0 5px;
   overflow: scroll;
@@ -42,13 +43,18 @@ body {
 /*  tech containers / buildings */
 
 .tech-wrapper {
-  width: auto;
+  flex-grow: 2;
   overflow: scroll;
   padding: 10px 0 0 0;
-  display: flex;
+  
+/*   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: stretch;
+  justify-content: stretch; */
+  
+  display: grid;
+  grid-template-columns: repeat(19, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
 
 .tech-wrapper.side-scroll {
@@ -73,27 +79,71 @@ body {
 }
 
 .tech-container {
-  height: min-content;
+  height: 100%;
   border: 1px solid black;
   display: grid;
 }
 
-#BARRACKS, #ARCHERY_RANGE {
+#BARRACKS, #STABLE, #ARCHERY_RANGE, #DOCK {
+  grid-row: 1/5;
+}
+
+#CASTLE {
+  grid-row: 5/9;
+}
+
+#BLACKSMITH, #SIEGE_WORKSHOP {
+  grid-row: 5/7;
+}
+
+#MONASTERY, #UNIVERSITY, #ECONOMY {
+  grid-row: 7/9;
+}
+
+#BARRACKS, #CASTLE {
+  grid-column: 1/5;
+}
+
+#DOCK {
+  grid-column: 16/20;
+}
+
+#UNIVERSITY {
+  grid-column: 10/13;
+}
+
+#ECONOMY {
+  grid-column: 13/16;
+}
+
+#ARCHERY_RANGE {
+  grid-column: 11/16;
+  
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
 
 #STABLE {
+  grid-column: 5/11;
+  
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
 
-#SIEGE_WORKSHOP {
+#DOCK, #BARRACKS, #CASTLE {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
 
+#SIEGE_WORKSHOP {
+  grid-column: 10/14;
+  
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
 #BLACKSMITH, #MONASTERY {
+  grid-column: 5/10;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
 }
