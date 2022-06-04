@@ -216,14 +216,34 @@ const availableCivs = [...civs];
 const civItem = Vue.component('civ-list-item', {
   props: ['civ'],
 
+  data: function () {
+    return { isHighlighted: false }
+  },
+
   computed: {
     imgPath: function() {
       return `./img/CIVS/${this.civ.toLowerCase()}.png`;
     }
   },
 
+  mounted: function() {
+    EventBus.$on('clear_highlights', function () {this.isHighlighted = false}.bind(this) );
+  },
+
+  methods: {
+    toggle: function () {
+      if ( this.isHighlighted ) {
+        EventBus.$emit('clear_highlights', this.civ);
+      } else {
+        EventBus.$emit('clear_highlights', this.civ);
+        EventBus.$emit('highlight_civ', this.civ);
+        this.isHighlighted = true;
+      }
+    }
+  },
+
   template: 
-    `<li class="civ-list-item">
+    `<li class="civ-list-item" @click='toggle'>
       <img class="civ-emblem" :src=imgPath>
       <span>{{civ}}</span>
     </li>`
@@ -233,7 +253,7 @@ const techButton = Vue.component('tech-button', {
   props: ['tech', 'techGroup'],
   
   data: function () {
-    return { techs, isSelected: false, isUnavailable: false, isIncluded: false }
+    return { techs, isSelected: false, isUnavailable: false, isIncluded: false, isHighlighted: false }
   },
   
   mounted: function() {
@@ -242,6 +262,8 @@ const techButton = Vue.component('tech-button', {
     EventBus.$on('deactivate_button', function (tech) {this.deactivate(tech);}.bind(this) );
     EventBus.$on('include_button', function (tech) {this.include(tech);}.bind(this) );
     EventBus.$on('uninclude_button', function (tech) {this.uninclude(tech);}.bind(this) );
+    EventBus.$on('highlight_button', function (civ) {this.highlight(civ);}.bind(this) );
+    EventBus.$on('clear_highlights', function () {this.isHighlighted = false;}.bind(this) );
     EventBus.$on('update_available', this.updateAvailability);
     EventBus.$on('reset', this.reset);
   },
@@ -270,7 +292,6 @@ const techButton = Vue.component('tech-button', {
         EventBus.$emit('on_deselect', this.tech, this.techGroup);
       else
         EventBus.$emit('on_select', this.tech, this.techGroup);
-//      EventBus.$emit('toggle_tech', this.tech, this.techGroup);
     },
     activate: function (tech) {
       if (this.isSelected) return;
@@ -294,6 +315,14 @@ const techButton = Vue.component('tech-button', {
         this.isIncluded = false;
       }
     },
+    highlight: function (civ) {
+      if (!disabledTechs[civ].includes(this.tech)) {
+        this.isHighlighted = true;
+      }
+    },
+    removeHighlight: function () {
+      this.isHighlighted = false;
+    },
     updateAvailability: function (availableCivsList) {
       this.isUnavailable = !availableCivsList.some(function (civName) {
         //if any civ in the list doesn't have this tech marked disabled,
@@ -308,7 +337,7 @@ const techButton = Vue.component('tech-button', {
         class='tech-button'
         v-bind:id=tech
         v-bind:style='{ "background-image": "url(" + imgPath + ")" }'
-        v-bind:class='[{ selected: isSelected, unavailable: isUnavailable, included: isIncluded}, rowClass, columnClass]'
+        v-bind:class='[{highlighted: isHighlighted, selected: isSelected, unavailable: isUnavailable, included: isIncluded}, rowClass, columnClass]'
         
         @click='toggle'>
           {{techs[techGroup][tech].name}}
@@ -357,6 +386,7 @@ const app = new Vue({
   mounted: function() {
     EventBus.$on('on_select', function (tech, techGroup) {app.onButtonSelect(tech, techGroup)} );
     EventBus.$on('on_deselect', function (tech, techGroup) {app.onButtonDeselect(tech, techGroup);} );
+    EventBus.$on('highlight_civ', function (civ) {app.onHighlightCiv(civ);} );
     this.updateIncludedAll();
   },
 
@@ -452,6 +482,10 @@ const app = new Vue({
       this.updateAvailableCivs();
       this.updateIncludedAll();
       EventBus.$emit('reset');
+    },
+    
+    onHighlightCiv: function(civ) {
+      EventBus.$emit('highlight_button', civ)
     }
   }
 })

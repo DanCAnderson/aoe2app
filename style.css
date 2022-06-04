@@ -177,4 +177,8 @@ body {
   opacity: 0.5;
 }
 
+.highlighted {
+  border: solid 2px purple;
+}
+
 /* temp */
