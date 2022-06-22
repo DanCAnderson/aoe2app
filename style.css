@@ -105,15 +105,15 @@ body {
   row-gap: 5px;
 }
 
-#ARCHERY_RANGE, #BLACKSMITH, #MONASTERY {  
+#BLACKSMITH, #MONASTERY, #SIEGE_WORKSHOP {  
   grid-template-columns: repeat(5, 1fr);
 }
 
-#STABLE {  
+#ARCHERY_RANGE, #STABLE {  
   grid-template-columns: repeat(6, 1fr);
 }
 
-#DOCK, #BARRACKS, #CASTLE, #SIEGE_WORKSHOP{
+#DOCK, #BARRACKS, #CASTLE{
   grid-template-columns: repeat(4, 1fr);
 }
 

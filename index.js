@@ -85,6 +85,9 @@ const FORTIFIED_WALL = 81;
 const HOARDINGS = 82;
 const SAPPERS = 83;
 
+const ELEPHANT_ARCHER = 84;
+const ARMORED_ELEPHANT = 85;
+
 
 const techs = {};
 
@@ -127,16 +130,18 @@ function populateTechTree(tree) {
   Vue.set(tree.ARCHERY_RANGE, HAND_CANNONEER, { name: 'Hand Cannoneer', column: 3, row: 3 });
   Vue.set(tree.ARCHERY_RANGE, CAVALRY_ARCHER, { name: 'Cavalry Archer', column: 4, row: 2, upgrade: HEAVY_CAV_ARCHER });
   Vue.set(tree.ARCHERY_RANGE, HEAVY_CAV_ARCHER, { name: 'Heavy Cavalry Archer', column: 4, row: 3, req: CAVALRY_ARCHER });
-  Vue.set(tree.ARCHERY_RANGE, THUMB_RING, { name: 'Thumb Ring', column: 5, row: 2 });
-  Vue.set(tree.ARCHERY_RANGE, PARTHIAN_TACTICS, { name: 'Parthian Tactics', column: 5, row: 3 });
+  Vue.set(tree.ARCHERY_RANGE, ELEPHANT_ARCHER, { name: 'Elephant Archer', column: 5, row: 2 });
+  Vue.set(tree.ARCHERY_RANGE, THUMB_RING, { name: 'Thumb Ring', column: 6, row: 2 });
+  Vue.set(tree.ARCHERY_RANGE, PARTHIAN_TACTICS, { name: 'Parthian Tactics', column: 6, row: 3 });
 
   Vue.set(tree, 'SIEGE_WORKSHOP', {});
 
-  Vue.set(tree.SIEGE_WORKSHOP, ONAGER, { name: 'Onager', column: 2, row: 2, upgrade: SIEGE_ONAGER });
-  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_ONAGER, { name: 'Siege Onager', column: 2, row: 3, req: ONAGER });
+  Vue.set(tree.SIEGE_WORKSHOP, ONAGER, { name: 'Onager', column: 3, row: 2, upgrade: SIEGE_ONAGER });
+  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_ONAGER, { name: 'Siege Onager', column: 3, row: 3, req: ONAGER });
   Vue.set(tree.SIEGE_WORKSHOP, SIEGE_RAM, { name: 'Siege Ram', column: 1, row: 3 });
-  Vue.set(tree.SIEGE_WORKSHOP, HEAVY_SCORPION, { name: 'Heavy Scorpion', column: 3, row: 2 });
-  Vue.set(tree.SIEGE_WORKSHOP, BOMBARD_CANNON, { name: 'Bombard Cannon', column: 4, row: 2 });
+  Vue.set(tree.SIEGE_WORKSHOP, ARMORED_ELEPHANT, { name: 'Armored Elephant', column: 2, row: 2 });
+  Vue.set(tree.SIEGE_WORKSHOP, HEAVY_SCORPION, { name: 'Heavy Scorpion', column: 4, row: 2 });
+  Vue.set(tree.SIEGE_WORKSHOP, BOMBARD_CANNON, { name: 'Bombard Cannon', column: 5, row: 2 });
 
   Vue.set(tree, 'BLACKSMITH', {});
 
