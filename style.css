@@ -35,6 +35,8 @@ body {
   width: max-content;
   margin-right: 5px;
   padding-right: 5px;
+
+  cursor: pointer;
 }
 
 .civ-list-item.highlighted {
