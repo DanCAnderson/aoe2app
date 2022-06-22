@@ -214,10 +214,10 @@ const civs = Object.keys(disabledTechs);
 const availableCivs = [...civs];
 
 const civItem = Vue.component('civ-list-item', {
-  props: ['civ'],
+  props: ['civ', 'initHighlighted'],
 
   data: function () {
-    return { isHighlighted: false }
+    return { isHighlighted: this.initHighlighted }
   },
 
   computed: {
@@ -375,6 +375,7 @@ const app = new Vue({
     civs,
     availableCivs,
     disabledCivs: [],
+    highlightedCiv: null,
     techs,
     selectedTechs,
   },
@@ -387,6 +388,7 @@ const app = new Vue({
     EventBus.$on('on_select', function (tech, techGroup) {app.onButtonSelect(tech, techGroup)} );
     EventBus.$on('on_deselect', function (tech, techGroup) {app.onButtonDeselect(tech, techGroup);} );
     EventBus.$on('highlight_civ', function (civ) {app.onHighlightCiv(civ);} );
+    EventBus.$on('clear_highlights', function () {app.highlightedCiv = null;} );
     this.updateIncludedAll();
   },
 
@@ -485,6 +487,7 @@ const app = new Vue({
     },
     
     onHighlightCiv: function(civ) {
+      this.highlightedCiv = civ;
       EventBus.$emit('highlight_button', civ)
     }
   }

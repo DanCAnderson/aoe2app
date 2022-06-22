@@ -13,10 +13,10 @@
     <div id="civList">
       <button @click="clearAll" id="reset">Clear All</button>
       <ul class="available-list">
-        <civ-list-item v-for="civ in availableCivs" v-bind:civ="civ" :key="civ"></civ-list-item>
+        <civ-list-item v-for="civ in availableCivs" v-bind:civ="civ" :init-highlighted="highlightedCiv === civ" :key="civ"></civ-list-item>
       </ul>
       <ul class="disabled-list">
-        <civ-list-item v-for="civ in disabledCivs" v-bind:civ="civ" :key="civ"></civ-list-item>
+        <civ-list-item v-for="civ in disabledCivs" v-bind:civ="civ" :init-highlighted="highlightedCiv === civ" :key="civ"></civ-list-item>
       </ul>
     </div>
     <div class="tech-wrapper">
