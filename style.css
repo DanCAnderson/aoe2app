@@ -1,6 +1,6 @@
 body {
   margin: 0;
-/*   background-color: #dca56c; */
+  background-color: #c19454;
 }
 
 #app {
@@ -159,7 +159,8 @@ body {
   width: 60px;
   height: min-content;
   min-height: 60px;
-  border: 4px solid white;
+  border: 4px solid;
+  border-color: #c19454;
   padding-top: 35px;
   background-color: blue;
   background-repeat: no-repeat;
@@ -184,7 +185,7 @@ body {
 }
 
 .highlighted {
-  border: solid 4px black;
+  border: solid 4px white;
 }
 
 /* temp */
