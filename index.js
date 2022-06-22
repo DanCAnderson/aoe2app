@@ -243,7 +243,7 @@ const civItem = Vue.component('civ-list-item', {
   },
 
   template: 
-    `<li class="civ-list-item" @click='toggle'>
+    `<li class="civ-list-item" :class="{highlighted: isHighlighted}" @click='toggle'>
       <img class="civ-emblem" :src=imgPath>
       <span>{{civ}}</span>
     </li>`

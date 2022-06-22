@@ -32,7 +32,13 @@ body {
 
 .civ-list-item {
   display: flex;
-  
+  width: max-content;
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+.civ-list-item.highlighted {
+  background-color: white;
 }
 
 .civ-emblem {
@@ -184,7 +190,7 @@ body {
   opacity: 0.5;
 }
 
-.highlighted {
+.tech-button.highlighted {
   border: solid 4px white;
 }
 
