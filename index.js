@@ -485,6 +485,7 @@ const app = new Vue({
     },
     
     clearAll: function() {
+      EventBus.$emit('clear_highlights');
       this.selectedTechs.splice(0, this.selectedTechs.length);
       this.updateAvailableCivs();
       this.updateIncludedAll();
