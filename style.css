@@ -1,4 +1,8 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+body, html {
   margin: 0;
   background-color: #c19454;
 }
@@ -10,16 +14,21 @@ body {
 }
 
 #reset {
+  margin: 0 25px;
   align-self: start;
   order: 1;
+  
+  color: white;
+  background-color: #72604a;
+  text-shadow: black;
 }
 
 #civList {
   flex-basis: 1;
   min-width: max-content;
-  height: 100%;
+  height: 100vh;
   padding: 5px 0 0 5px;
-  overflow: scroll;
+  overflow: hidden scroll;
 }
 
 .disabled-list > li {
@@ -52,8 +61,11 @@ body {
 /*  tech containers / buildings */
 
 .tech-wrapper {
-  overflow: scroll;
-  padding: 10px 0 0 0;
+  height: 100%;
+  
+  overflow-x: scroll;
+  overflow-y: hidden;
+  /*! padding: 0; */
   
   display: flex;
   flex-direction: row;
@@ -94,6 +106,8 @@ body {
 }
 
 .tech-button-container {
+  height: 100%;
+  
   padding: 0 5px;
   flex-grow: 2;
   
@@ -164,8 +178,8 @@ body {
 /*  */
 
 .tech-button {
-  width: 60px;
-  height: min-content;
+  width: 66px;
+  height: 77px;
   min-height: 60px;
   border: 4px solid;
   border-color: #c19454;
