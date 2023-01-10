@@ -495,6 +495,18 @@ const app = new Vue({
     onHighlightCiv: function(civ) {
       this.highlightedCiv = civ;
       EventBus.$emit('highlight_button', civ)
+    },
+
+    horizontalScrollHandler: function(event) {
+      const domElement = document.getElementById(event.currentTarget.id);
+      if (domElement) {
+        if (event.deltaY > 0) {
+          domElement.scrollLeft += 100;
+        } else {
+          domElement.scrollLeft -= 100;
+        }
+        event.preventDefault();
+      }
     }
-  }
+}
 })
