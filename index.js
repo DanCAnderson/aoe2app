@@ -88,6 +88,8 @@ const SAPPERS = 83;
 const ELEPHANT_ARCHER = 84;
 const ARMORED_ELEPHANT = 85;
 
+const GAMBESONS =86;
+
 
 const techs = {};
 
@@ -97,11 +99,12 @@ function populateTechTree(tree) {
 
   Vue.set(tree.BARRACKS, CHAMPION, { name: 'Champion', column: 1, row: 4, req: TWO_HANDED_SWORDSMAN });
   Vue.set(tree.BARRACKS, HALBERDIER, { name: 'Halberdier', column: 2, row: 3, req: PIKEMAN });
-  Vue.set(tree.BARRACKS, SQUIRES, { name: 'Squires', column: 4, row: 2 });
+  Vue.set(tree.BARRACKS, SQUIRES, { name: 'Squires', column: 5, row: 2 });
   Vue.set(tree.BARRACKS, EAGLE_SCOUT, { name: 'Eagle Scout', column: 3, row: 2 });
   Vue.set(tree.BARRACKS, PIKEMAN, { name: 'Pikeman', column: 2, row: 2, req: SPEARMAN, upgrade: HALBERDIER });
   Vue.set(tree.BARRACKS, SPEARMAN, { name: 'Spearman', column: 2, row: 1, upgrade: PIKEMAN });
-  Vue.set(tree.BARRACKS, SUPPLIES, { name: 'Supplies', column: 4, row: 1 });
+  Vue.set(tree.BARRACKS, SUPPLIES, { name: 'Supplies', column: 4, row: 1, upgrade: GAMBESONS });
+  Vue.set(tree.BARRACKS, GAMBESONS, { name: 'Gambesons', column: 4, row: 2, req: SUPPLIES })
   Vue.set(tree.BARRACKS, LONG_SWORDSMAN, { name: 'Longswordsman', column: 1, row: 2, upgrade: TWO_HANDED_SWORDSMAN });
   Vue.set(tree.BARRACKS, TWO_HANDED_SWORDSMAN, { name: 'Two Handed Swordsman', column: 1, row: 3, req: LONG_SWORDSMAN, upgrade: CHAMPION });
 

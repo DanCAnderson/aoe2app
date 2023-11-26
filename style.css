@@ -124,7 +124,7 @@ body, html {
   row-gap: 5px;
 }
 
-#BLACKSMITH, #MONASTERY, #SIEGE_WORKSHOP {  
+#BARRACKS, #BLACKSMITH, #MONASTERY, #SIEGE_WORKSHOP {  
   grid-template-columns: repeat(5, 1fr);
 }
 
@@ -132,7 +132,7 @@ body, html {
   grid-template-columns: repeat(6, 1fr);
 }
 
-#DOCK, #BARRACKS, #CASTLE{
+#DOCK, #CASTLE{
   grid-template-columns: repeat(4, 1fr);
 }
 
