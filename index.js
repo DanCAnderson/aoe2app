@@ -89,6 +89,7 @@ const ELEPHANT_ARCHER = 84;
 const ARMORED_ELEPHANT = 85;
 
 const GAMBESONS =86;
+const DROMON = 87;
 
 
 const techs = {};
@@ -172,6 +173,7 @@ function populateTechTree(tree) {
   Vue.set(tree.DOCK, GALLEY, { name: 'Galley', column: 4, row: 1, upgrade: WAR_GALLEY });
   Vue.set(tree.DOCK, WAR_GALLEY, { name: 'War Galley', column: 4, row: 2, upgrade: GALLEON, req: GALLEY });
   Vue.set(tree.DOCK, GALLEON, { name: 'Galleon', column: 4, row: 3, req: WAR_GALLEY });
+  Vue.set(tree.DOCK, DROMON, { name: 'Dromon', column: 5, row: 3 });
 
   Vue.set(tree, 'CASTLE', {});
 
