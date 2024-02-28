@@ -214,7 +214,16 @@ function populateTechTree(tree) {
   Vue.set(tree.ECONOMY, TWO_MAN_SAW, { name: 'Two Man Saw', column: 1, row: 2 });
 }
 
-
+const ExceptionList = {};
+ExceptionList[HUSBANDRY] = ["Cumans"];
+ExceptionList[TWO_HANDED_SWORDSMAN] = ["Romans"];
+ExceptionList[CHAMPION] = ["Romans"];
+ExceptionList[SQUIRES] = ["Celts"];
+ExceptionList[HUSSAR] = ["Lithuanians", "Poles"];
+ExceptionList[PALADIN] = ["Persians"];
+ExceptionList[FERVOR] = ["Slavs"];
+ExceptionList[ARCHITECTURE] = ["Byzantines"];
+ExceptionList[BLOODLINES] = ["Franks"];
 
 const EventBus = new Vue();
 
@@ -385,9 +394,11 @@ const app = new Vue({
     civs,
     availableCivs,
     disabledCivs: [],
+    exceptionCivs: [],
     highlightedCiv: null,
     techs,
     selectedTechs,
+    showExceptions: false
   },
 
   created: function () {
@@ -464,10 +475,39 @@ const app = new Vue({
         });
         return available;
       });
+
+      // if (this.showExceptions) {
+      //   this.exceptionCivs = civs.filter((civ) => {
+      //     let isException = true;
+      //     this.selectedTechs.forEach((tech) => {
+      //       //if any techs are not an exception, then it is still unavailable
+      //       if ( ExceptionList[tech] && ExceptionList[tech].includes(civ) )
+      //     });
+      //     return !this.availableCivs.includes(civ) && isException;
+      //   });
+      // }
       
       this.disabledCivs = civs.filter((civ) => {
         return !this.availableCivs.includes(civ);
       })
+
+      if (this.showExceptions) {
+        this.exceptionCivs = this.disabledCivs.filter((civ) => {
+          let isException = true;
+          this.selectedTechs.forEach((tech) => {
+            if (disabledTechs[civ].includes(tech)) {
+              if (!ExceptionList[tech])
+                isException = false;
+              else if (!ExceptionList[tech].includes(civ))
+                isException = false;
+            }
+          })
+          return isException;
+        });
+      }
+      else
+        this.exceptionCivs = [];
+
       EventBus.$emit('update_available', this.availableCivs);
     },
     

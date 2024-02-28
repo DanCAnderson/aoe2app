@@ -12,8 +12,13 @@
   <div id="app">
     <div id="civList">
       <button @click="clearAll" id="reset">Clear All</button>
+      <label for="exceptionCheckbox">Show Unique Exceptions</label>
+      <input type="checkbox" id="exceptionCheckbox" v-model="showExceptions" @change="updateAvailableCivs" />
       <ul class="available-list">
         <civ-list-item v-for="civ in availableCivs" v-bind:civ="civ" :init-highlighted="highlightedCiv === civ" :key="civ"></civ-list-item>
+      </ul>
+      <ul class="exception-list">
+        <civ-list-item v-for="civ in exceptionCivs" v-bind:civ="civ" :init-highlighted="highlightedCiv === civ" :key="civ"></civ-list-item>
       </ul>
       <ul class="disabled-list">
         <civ-list-item v-for="civ in disabledCivs" v-bind:civ="civ" :init-highlighted="highlightedCiv === civ" :key="civ"></civ-list-item>
