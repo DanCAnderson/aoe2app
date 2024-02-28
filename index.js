@@ -224,6 +224,7 @@ ExceptionList[PALADIN] = ["Persians"];
 ExceptionList[FERVOR] = ["Slavs"];
 ExceptionList[ARCHITECTURE] = ["Byzantines"];
 ExceptionList[BLOODLINES] = ["Franks"];
+ExceptionList[SUPPLIES] = ["Goths"];
 
 const EventBus = new Vue();
 
