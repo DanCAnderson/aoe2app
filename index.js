@@ -227,6 +227,8 @@ ExceptionList[FERVOR] = ["Slavs"];
 ExceptionList[ARCHITECTURE] = ["Byzantines"];
 ExceptionList[BLOODLINES] = ["Franks"];
 ExceptionList[SUPPLIES] = ["Goths"];
+ExceptionList[KEEP] = ["Sicilians"];
+ExceptionList[GUARD_TOWER] = ["Sicilians"];
 
 const EventBus = new Vue();
 
