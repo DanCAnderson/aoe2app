@@ -90,6 +90,7 @@ const ARMORED_ELEPHANT = 85;
 
 const GAMBESONS =86;
 const DROMON = 87;
+const ELITE_BATTLE_ELEPHANT = 88;
 
 
 const techs = {};
@@ -122,6 +123,7 @@ function populateTechTree(tree) {
   Vue.set(tree.STABLE, BLOODLINES, { name: 'Bloodlines', column: 2, row: 1 });
   Vue.set(tree.STABLE, HUSBANDRY, { name: 'Husbandry', column: 6, row: 2 });
   Vue.set(tree.STABLE, BATTLE_ELEPHANT, { name: 'Battle Elephant', column: 4, row: 2 });
+  Vue.set(tree.STABLE, ELITE_BATTLE_ELEPHANT, { name: 'Elite Battle Elephant', column: 4, row: 3, req: BATTLE_ELEPHANT });
   Vue.set(tree.STABLE, STEPPE_LANCER, { name: 'Steppe Lancer', column: 5, row: 2 });
 
   Vue.set(tree, 'ARCHERY_RANGE', {});
