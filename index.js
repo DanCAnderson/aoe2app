@@ -118,11 +118,11 @@ function populateTechTree(tree) {
   Vue.set(tree.STABLE, KNIGHT, { name: 'Knight', column: 2, row: 2, upgrade: CAVALIER });
   Vue.set(tree.STABLE, CAVALIER, { name: 'Cavalier', column: 2, row: 3, req: KNIGHT, upgrade: PALADIN });
   Vue.set(tree.STABLE, PALADIN, { name: 'Paladin', column: 2, row: 4, req: CAVALIER });
-  Vue.set(tree.STABLE, CAMEL_RIDER, { name: 'Camel Rider', column: 3, row: 2, upgrade: HEAVY_CAMEL_RIDER, unupgrade: 'wat' });
+  Vue.set(tree.STABLE, CAMEL_RIDER, { name: 'Camel Rider', column: 3, row: 2, upgrade: HEAVY_CAMEL_RIDER });
   Vue.set(tree.STABLE, HEAVY_CAMEL_RIDER, { name: 'Heavy Camel Rider', column: 3, row: 3, req: CAMEL_RIDER });
   Vue.set(tree.STABLE, BLOODLINES, { name: 'Bloodlines', column: 2, row: 1 });
   Vue.set(tree.STABLE, HUSBANDRY, { name: 'Husbandry', column: 6, row: 2 });
-  Vue.set(tree.STABLE, BATTLE_ELEPHANT, { name: 'Battle Elephant', column: 4, row: 2 });
+  Vue.set(tree.STABLE, BATTLE_ELEPHANT, { name: 'Battle Elephant', column: 4, row: 2, upgrade: ELITE_BATTLE_ELEPHANT });
   Vue.set(tree.STABLE, ELITE_BATTLE_ELEPHANT, { name: 'Elite Battle Elephant', column: 4, row: 3, req: BATTLE_ELEPHANT });
   Vue.set(tree.STABLE, STEPPE_LANCER, { name: 'Steppe Lancer', column: 5, row: 2 });
 

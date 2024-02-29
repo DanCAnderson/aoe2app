@@ -16,7 +16,6 @@ body, html {
 #reset {
   margin: 0 25px;
   align-self: start;
-  order: 1;
   
   color: white;
   background-color: #72604a;
@@ -24,6 +23,8 @@ body, html {
 }
 
 #civList {
+  display: flex;
+  flex-direction: column;
   flex-basis: 1;
   min-width: max-content;
   height: 100vh;
@@ -32,12 +33,28 @@ body, html {
   overflow: hidden scroll;
 }
 
+#exceptionCheckbox:checked + label {
+  background-color: purple;
+}
+
+.available-list {
+  margin-top: 0;
+}
+
+.exception-list {
+  margin-bottom: 0;
+}
+
 .disabled-list > li {
   opacity: 0.5;
 }
 
 #civList > ul {
   padding: 0;
+}
+
+.exception-list > li {
+  background-color: purple;
 }
 
 .civ-list-item {
