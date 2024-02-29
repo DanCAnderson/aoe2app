@@ -478,17 +478,6 @@ const app = new Vue({
         });
         return available;
       });
-
-      // if (this.showExceptions) {
-      //   this.exceptionCivs = civs.filter((civ) => {
-      //     let isException = true;
-      //     this.selectedTechs.forEach((tech) => {
-      //       //if any techs are not an exception, then it is still unavailable
-      //       if ( ExceptionList[tech] && ExceptionList[tech].includes(civ) )
-      //     });
-      //     return !this.availableCivs.includes(civ) && isException;
-      //   });
-      // }
       
       this.disabledCivs = civs.filter((civ) => {
         return !this.availableCivs.includes(civ);
@@ -507,6 +496,7 @@ const app = new Vue({
           })
           return isException;
         });
+        this.disabledCivs.filter((civ) => !this.exceptionCivs.includes(civ));
       }
       else
         this.exceptionCivs = [];
