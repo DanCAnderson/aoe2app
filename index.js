@@ -229,6 +229,7 @@ ExceptionList[BLOODLINES] = ["Franks"];
 ExceptionList[SUPPLIES] = ["Goths"];
 ExceptionList[KEEP] = ["Sicilians"];
 ExceptionList[GUARD_TOWER] = ["Sicilians"];
+ExceptionList[PLATE_MAIL_ARMOR] = ["Romans"];
 
 const EventBus = new Vue();
 
