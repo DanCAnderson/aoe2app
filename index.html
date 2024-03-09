@@ -13,7 +13,7 @@
     <div id="civList">
       <button @click="clearAll" id="reset">Clear All</button>
       <label class="exceptionLabel" for="exceptionCheckbox">
-        <input type="checkbox" id="exceptionCheckbox" v-model="showExceptions" @change="updateAvailableCivs" />
+        <input type="checkbox" id="exceptionCheckbox" v-model="showExceptions" @change="updateAvailableCivs();updateIncludedAll();" />
         Show Unique Exceptions
       </label>
       <ul class="exception-list">

@@ -276,6 +276,8 @@ const app = new Vue({
     
     checkIsIncluded: function (tech) {
       return this.availableCivs.every((civ) => {
+        if ( this.showExceptions && ExceptionList[tech] && ExceptionList[tech].includes(civ) )
+          return true;
         return !disabledTechs[civ].includes(tech);
       });
     },
