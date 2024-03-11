@@ -91,6 +91,7 @@ const ARMORED_ELEPHANT = 85;
 const GAMBESONS =86;
 const DROMON = 87;
 const ELITE_BATTLE_ELEPHANT = 88;
+const CAPPED_RAM = 89;
 
 
 const techs = {};
@@ -144,7 +145,8 @@ function populateTechTree(tree) {
 
   Vue.set(tree.SIEGE_WORKSHOP, ONAGER, { name: 'Onager', column: 3, row: 2, upgrade: SIEGE_ONAGER });
   Vue.set(tree.SIEGE_WORKSHOP, SIEGE_ONAGER, { name: 'Siege Onager', column: 3, row: 3, req: ONAGER });
-  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_RAM, { name: 'Siege Ram', column: 1, row: 3 });
+  Vue.set(tree.SIEGE_WORKSHOP, CAPPED_RAM, { name: 'Capped Ram', column: 1, row: 2, upgrade: SIEGE_RAM });
+  Vue.set(tree.SIEGE_WORKSHOP, SIEGE_RAM, { name: 'Siege Ram', column: 1, row: 3, req: CAPPED_RAM });
   Vue.set(tree.SIEGE_WORKSHOP, ARMORED_ELEPHANT, { name: 'Armored Elephant', column: 2, row: 2 });
   Vue.set(tree.SIEGE_WORKSHOP, HEAVY_SCORPION, { name: 'Heavy Scorpion', column: 4, row: 2 });
   Vue.set(tree.SIEGE_WORKSHOP, BOMBARD_CANNON, { name: 'Bombard Cannon', column: 5, row: 2 });
